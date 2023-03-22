@@ -15,6 +15,9 @@ namespace AddressBook
         public void details()
         {
             //List<Address> list = new List<Address>();
+            Console.WriteLine("Enter no.of details want to print:");
+            int n=int.Parse(Console.ReadLine());
+            for (int i = 0; i < n; i++)
 
             {
                 Address address = new Address();
@@ -40,13 +43,16 @@ namespace AddressBook
                 address.eMail = Console.ReadLine();
                 list.Add(address);
                 Console.WriteLine(address.firstname + "\n" + address.lastname + "\n" + address.address + "\n" + address.city + "\n" + address.state + "\n" + address.phoneNo + "\n" + address.postcode + "\n" + address.country + "\n" + address.eMail);
+            }
                 Console.WriteLine("Edit by using First Name: ");
                 String name = Console.ReadLine();
                 foreach (var data in list)
                 {
+                     Address address = new Address();
                     if (data.firstname == name)
                     {
-                        // Console.WriteLine("Enter option to edit:\n1.First Name\n2.Second Name\n3.Address\n4.city\n5.state\n6.phone number\n7.email");
+                       
+                        Console.WriteLine("Enter option to edit:\n1.First Name\n2.Second Name\n3.Address\n4.city\n5.state\n6.phone number\n7.email");
                         int option = Convert.ToInt32(Console.ReadLine());
                         switch (option)
                         {
@@ -79,13 +85,15 @@ namespace AddressBook
                                 data.eMail = Console.ReadLine();
                                 break;
                         }
-                        Console.WriteLine(address.firstname + "\n" + address.lastname + "\n" + address.address + "\n" + address.city + "\n" + address.state + "\n" + address.phoneNo + "\n" + address.postcode + "\n" + address.country + "\n" + address.eMail);
+                        Console.WriteLine(data.firstname + "\n" + data.lastname + "\n" + data.address + "\n" + data.city + "\n" + data.state + "\n" + data.phoneNo + "\n" + data.postcode + "\n" + data.country + "\n" + data.eMail);
 
                     }
-
-                }
+                
 
             }
+           
+
+
         }
         public void deleteContact()
         {
