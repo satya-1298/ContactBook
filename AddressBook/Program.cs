@@ -11,7 +11,7 @@ namespace AddressBook
             bool flag = true;
             while (flag)
             {
-                Console.Write("1.Add Contact\n2.Display\n3.EnterCity\n4.EnterState\n5.Exit\nEnter your option: ");
+                Console.Write("1.Add Contact\n2.Display\n3.EnterCity\n4.EnterState\n5.CountContacts\n6.Exit\nEnter your option: ");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -28,9 +28,12 @@ namespace AddressBook
                        dict.SearchByState();
                         break;
                     case 5: 
+                        dict.Count_Contacts_ByState();
+                        break;
+                        case 6:
                         flag = false;
                         break;
-                        
+
                 }
             }
         }
