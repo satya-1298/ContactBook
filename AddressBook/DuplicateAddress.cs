@@ -52,7 +52,7 @@ namespace AddressBook
         {
             Console.WriteLine("Eter city to search");
             string city = Console.ReadLine();
-            Console.WriteLine("The people in {0} city are: " + city);
+            Console.WriteLine("The people in {0} city are: " , city);
             foreach (var key in addressList.Keys)
             {
                 foreach (var value in addressList[key].Where(v => v.city.Equals(city)).ToList())
@@ -65,7 +65,7 @@ namespace AddressBook
         {
             Console.WriteLine("Eter state to search");
             string state = Console.ReadLine();
-            Console.WriteLine("The people in {0} city are: " , state);
+            Console.WriteLine("The people in {0} state are: " , state);
             foreach (var key in addressList.Keys)
             {
                 foreach (var value in addressList[key].Where(v => v.state.Equals(state)).ToList())
@@ -73,6 +73,21 @@ namespace AddressBook
                     Console.WriteLine(value.firstname + "\t" + value.lastname + "\t" + value.address + "\t" + value.city + "\t" + value.state + "\t" + value.phoneNo + "\t" + value.eMail);
                 }
             }
+        }
+        public void Count_Contacts_ByState()
+        {
+            int count = 0;
+            Console.WriteLine("Eter state to search");
+            string state = Console.ReadLine();
+            foreach (var key in addressList.Keys)
+            {
+                foreach (var value in addressList[key].Where(v => v.state.Equals(state)).ToList())
+                {
+                    Console.WriteLine(value.firstname + "\t" + value.lastname + "\t" + value.address + "\t" + value.city + "\t" + value.state + "\t" + value.phoneNo + "\t" + value.eMail);
+                    count++;
+                }
+            }
+            Console.WriteLine("There are {0} people in state {1}", count, state);
         }
     }
 }
