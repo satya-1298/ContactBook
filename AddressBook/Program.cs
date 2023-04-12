@@ -11,7 +11,7 @@ namespace AddressBook
             bool flag = true;
             while (flag)
             {
-                Console.Write("1.Add Contact\n2.Display\n3.Exit\nEnter your option: ");
+                Console.Write("1.Add Contact\n2.Display\n3.EnterCity\n4.Exit\nEnter your option: ");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -22,6 +22,9 @@ namespace AddressBook
                         dict.Display();
                         break;
                     case 3:
+                        dict.SearchByCity();
+                        break;
+                    case 4:
                         flag = false;
                         break;
                 }
