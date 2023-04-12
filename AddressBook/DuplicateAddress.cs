@@ -61,5 +61,18 @@ namespace AddressBook
                 }
             }
         }
+        public void SearchByState()
+        {
+            Console.WriteLine("Eter state to search");
+            string state = Console.ReadLine();
+            Console.WriteLine("The people in {0} city are: " , state);
+            foreach (var key in addressList.Keys)
+            {
+                foreach (var value in addressList[key].Where(v => v.state.Equals(state)).ToList())
+                {
+                    Console.WriteLine(value.firstname + "\t" + value.lastname + "\t" + value.address + "\t" + value.city + "\t" + value.state + "\t" + value.phoneNo + "\t" + value.eMail);
+                }
+            }
+        }
     }
 }
