@@ -48,5 +48,18 @@ namespace AddressBook
                     Console.WriteLine(items.firstname + "\t" + items.lastname + "\t" + items.address + "\t" + items.city + "\t" + items.state + "\t" + items.phoneNo + "\t" + items.eMail);
             }
         }
+        public void SearchByCity()
+        {
+            Console.WriteLine("Eter city to search");
+            string city = Console.ReadLine();
+            Console.WriteLine("The people in {0} city are: " + city);
+            foreach (var key in addressList.Keys)
+            {
+                foreach (var value in addressList[key].Where(v => v.city.Equals(city)).ToList())
+                {
+                    Console.WriteLine(value.firstname + "\t" + value.lastname + "\t" + value.address + "\t" + value.city + "\t" + value.state + "\t" + value.phoneNo + "\t" + value.eMail);
+                }
+            }
+        }
     }
 }
